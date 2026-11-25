@@ -1,0 +1,64 @@
+[
+  {
+    "title": "RowHero",
+    "initials": "RH",
+    "role": "Founder",
+    "years": "2016 – present",
+    "featured": true,
+    "summary": "A first-to-market app that helps rowing coaches capture and analyze performance without manual tracking.",
+    "details": "Coaches used to stand on the dock with a stopwatch and a clipboard. RowHero captures the workout as it happens and turns it into something a coach can act on before the next practice. I designed it, built the backend, and shipped the phone apps.",
+    "highlights": [
+      "Backend designed to handle up to 10,000 athletes in a single workout, with low latency and low cloud cost.",
+      "Shipped the iOS and Android apps end to end.",
+      "100% year-over-year customer retention across 35+ teams."
+    ],
+    "tags": ["Mobile apps", "Backend", "Product"],
+    "link": ""
+  },
+  {
+    "title": "Northforge",
+    "initials": "NF",
+    "role": "Founder",
+    "years": "2025 – present",
+    "featured": true,
+    "summary": "Hands-on training that teaches real estate developers, investors, and law firms to use Claude in their day-to-day work.",
+    "details": "Most AI training stops at the demo. Northforge starts with the work people actually do each week and rebuilds it with AI, so the time savings show up on Monday, not someday.",
+    "highlights": [
+      "Helped non-technical marketers, sellers, and business leaders save 5 to 10 hours a week.",
+      "Cut a 10-hour research task to 1 hour, and 3 hours of weekly reporting to 10 minutes.",
+      "Built automations that replaced rote data entry, analysis, and reporting with repeatable AI workflows."
+    ],
+    "tags": ["AI workflows", "Teaching", "Claude"],
+    "link": ""
+  },
+  {
+    "title": "YouTube analytics pipeline",
+    "initials": "YA",
+    "role": "Builder",
+    "years": "2024 – present",
+    "featured": true,
+    "summary": "A data pipeline across 700+ tutorial videos to learn what makes a tutorial keep getting watched for years.",
+    "details": "Some tutorials fade in a week; others pull views for years. I pulled the channel's history into one place to find the patterns behind the long-lasting ones and feed them back into what we make next.",
+    "highlights": [
+      "Analyzed performance across 700+ videos on a 4.5M-subscriber channel.",
+      "Turned the findings into concrete guidance for topics, titles, and structure."
+    ],
+    "tags": ["Data", "Analytics", "Automation"],
+    "link": ""
+  },
+  {
+    "title": "Technology tutorials on YouTube",
+    "initials": "YT",
+    "role": "Technology Educator",
+    "years": "2024 – present",
+    "featured": false,
+    "summary": "Hosting technology and AI tutorials for a 4.5M-subscriber channel.",
+    "details": "Teaching is how I make sure I really understand something. The tutorials focus on getting a real task done with the tools people already have, explained plainly.",
+    "highlights": [
+      "Reach 100K+ views a week.",
+      "Tutorials on AI tools, productivity apps, and everyday technology."
+    ],
+    "tags": ["Teaching", "Video", "AI"],
+    "link": ""
+  }
+]

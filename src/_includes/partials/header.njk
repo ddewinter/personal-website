@@ -1,0 +1,45 @@
+{%- set nav = [
+  { url: "/", label: "Home" },
+  { url: "/about/", label: "About" },
+  { url: "/projects/", label: "Projects" },
+  { url: "/blog/", label: "Blog" },
+  { url: "/contact/", label: "Contact" }
+] %}
+
+{%- if masthead %}
+{#- Home page: full magazine masthead #}
+<header class="masthead">
+  <div class="container">
+    <div class="dateline">
+      <span>{{ "" | monthYear }}</span>
+      <span>Notes on building products and putting AI to work</span>
+    </div>
+    <div class="nameplate">
+      <h1 class="nameplate-name">{{ site.name }}</h1>
+      <p class="nameplate-tagline">{{ site.tagline }}</p>
+    </div>
+    <nav class="masthead-nav" aria-label="Main">
+      <ul>
+        {%- for item in nav %}{% if item.url != "/" %}
+        <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+        {%- endif %}{% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
+{%- else %}
+{#- Every other page: compact header #}
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/">{{ site.name }}</a>
+    <nav aria-label="Main">
+      <ul class="nav-list">
+        {%- for item in nav %}
+        {%- set active = (page.url == item.url) or (item.url != "/" and page.url and page.url.startsWith(item.url)) %}
+        <li><a href="{{ item.url }}"{% if active %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
+{%- endif %}

@@ -1,0 +1,13 @@
+{%- set socialLabels = { linkedin: "LinkedIn", github: "GitHub", youtube: "YouTube", x: "X" } %}
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-note">© {{ "" | currentYear }} {{ site.name }}. Built by hand, written in plain text.</p>
+    <ul class="footer-links">
+      <li><a href="mailto:{{ site.email }}">Email</a></li>
+      {%- for key, url in site.social %}{% if url %}
+      <li><a href="{{ url }}" rel="me noopener">{{ socialLabels[key] or key }}</a></li>
+      {%- endif %}{% endfor %}
+      <li><a href="/feed.xml">RSS</a></li>
+    </ul>
+  </div>
+</footer>

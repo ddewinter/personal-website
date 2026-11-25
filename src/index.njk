@@ -1,0 +1,77 @@
+---
+layout: layouts/base.njk
+masthead: true
+---
+<div class="container">
+  <section class="cover" aria-label="Introduction">
+    <figure>
+      <img src="/assets/images/headshot.jpg" alt="Portrait of David DeWinter smiling, wearing a blue gingham shirt" width="720" height="900" fetchpriority="high">
+      <figcaption>David DeWinter has spent 15+ years leading product and engineering teams and starting companies.</figcaption>
+    </figure>
+
+    <article class="feature">
+      <span class="kicker">The work</span>
+      <h2>Turning AI from a demo into <em>hours saved</em> every week</h2>
+      <p class="dek">A builder and teacher on shipping products people rely on, and helping teams get real work done with AI.</p>
+      <div class="byline">By <b>{{ site.name }}</b></div>
+      <div class="feature-body">
+        <p>For more than 15 years I've worked on both sides of building software: writing the code and deciding what's worth writing. I've led product teams, founded RowHero, and served as a Chief Product Officer.</p>
+        <p>Today I run Northforge, where I teach real estate developers, investors, and law firms to use AI in their everyday work, and I host tech and AI tutorials for a 4.5M-subscriber channel.</p>
+      </div>
+      <a class="more" href="/about/">More about me →</a>
+    </article>
+
+    <aside class="numbers">
+      <h2>By the numbers</h2>
+      <dl>
+        <div><dt>4.5M</dt><dd>subscribers on the channel I teach for</dd></div>
+        <div><dt>35+</dt><dd>teams using RowHero, 100% retention</dd></div>
+        <div><dt>$35M</dt><dd>revenue, up from $17M, during my time as CPO</dd></div>
+        <div><dt>10 → 1</dt><dd>hours for a research task, rebuilt with AI</dd></div>
+      </dl>
+    </aside>
+  </section>
+
+  <div class="issue-head">
+    <h2>In this issue: projects</h2>
+    <a href="/projects/">All projects →</a>
+  </div>
+  <ul class="issue">
+    {%- set n = 0 %}
+    {%- for project in projects %}{% if project.featured %}
+    {%- set n = n + 1 %}
+    <li>
+      <span class="num" aria-hidden="true">0{{ n }}</span>
+      <h3><a href="/projects/#{{ project.title | slugify }}">{{ project.title }}</a></h3>
+      <p>{{ project.summary }}</p>
+      <p class="meta">{{ project.role }} · {{ project.years }}</p>
+    </li>
+    {%- endif %}{% endfor %}
+  </ul>
+
+  {%- set latest = collections.posts | first %}
+  {%- if latest %}
+  <section class="essay{% if not latest.data.pullquote %} no-quote{% endif %}" aria-label="Latest writing">
+    <div>
+      <span class="kicker">Latest essay</span>
+      <h2><a href="{{ latest.url }}">{{ latest.data.title }}</a></h2>
+      {%- if latest.data.description %}<p>{{ latest.data.description }}</p>{% endif %}
+      <a class="more" href="{{ latest.url }}">Read the essay →</a>
+      {%- if collections.posts.length > 1 %} <span aria-hidden="true">·</span> <a class="more" href="/blog/">All writing →</a>{% endif %}
+    </div>
+    {%- if latest.data.pullquote %}
+    <blockquote>
+      {{ latest.data.pullquote }}
+      <cite>From “{{ latest.data.title }}”</cite>
+    </blockquote>
+    {%- endif %}
+  </section>
+  {%- endif %}
+
+  <section class="letters" aria-label="Contact">
+    <span class="kicker">Letters</span>
+    <h2>Write to me</h2>
+    <p>Working on something where AI could save your team real time, or just want to compare notes? I read every message.</p>
+    <a class="button" href="/contact/">Get in touch</a>
+  </section>
+</div>

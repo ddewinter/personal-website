@@ -1,0 +1,74 @@
+---
+layout: layouts/page.njk
+title: Get in touch
+intro: Questions, ideas, a project you'd like help with, or just a hello. I read every message.
+description: Contact David DeWinter.
+permalink: /contact/
+scripts:
+  - /assets/js/contact.js
+---
+<div class="contact-grid">
+  <form class="form" id="contact-form" data-email="{{ site.email }}" novalidate>
+    <div class="form-row">
+      <div class="field">
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
+        <p class="field-error" id="name-error" aria-live="polite"></p>
+      </div>
+      <div class="field">
+        <label for="email">Your email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
+        <p class="field-error" id="email-error" aria-live="polite"></p>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="topic">What's this about?</label>
+      <select id="topic" name="topic">
+        <option>Just saying hello</option>
+        <option>AI training or workflows</option>
+        <option>A project or collaboration</option>
+        <option>Speaking or teaching</option>
+        <option>Something I read on the blog</option>
+        <option>Something else</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required aria-describedby="message-error"></textarea>
+      <p class="field-error" id="message-error" aria-live="polite"></p>
+    </div>
+
+    <div class="button-row">
+      <button class="button" type="submit">Open in my email app</button>
+    </div>
+    <p class="form-note">Nothing is sent from this page. Pressing the button opens your own email app with your message ready to go; you just press send.</p>
+
+    <div class="form-status" id="form-status" role="status" hidden>
+      <p><strong>Your email app should be opening now.</strong></p>
+      <p>Nothing happened? Copy the address on this page and paste your message into any email.</p>
+    </div>
+  </form>
+
+  <aside class="contact-aside">
+    <section>
+      <h2>Prefer plain email?</h2>
+      <p>Write to me directly any time.</p>
+      <p class="email-line">
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        <button class="copy-button" type="button" data-copy="{{ site.email }}" hidden>Copy</button>
+      </p>
+    </section>
+    <section>
+      <h2>What to expect</h2>
+      <p>I usually reply within a couple of business days. If it's about training or a project, a few lines on your team and what you're trying to get done helps me give you a useful answer.</p>
+    </section>
+    <noscript>
+      <section>
+        <h2>JavaScript is off</h2>
+        <p>The form needs JavaScript to open your email app. You can email me directly at <a href="mailto:{{ site.email }}">{{ site.email }}</a>.</p>
+      </section>
+    </noscript>
+  </aside>
+</div>

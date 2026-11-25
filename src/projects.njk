@@ -1,0 +1,31 @@
+---
+layout: layouts/page.njk
+title: Projects
+intro: Products, programs, and tools I've built, with what they set out to do and what they actually achieved.
+description: Projects by David DeWinter, including RowHero, Northforge, and a YouTube analytics pipeline.
+permalink: /projects/
+---
+{%- for project in projects %}
+<article class="project" id="{{ project.title | slugify }}">
+  <div class="project-aside">
+    <span class="num" aria-hidden="true">0{{ loop.index }}</span>
+    <h2>{{ project.title }}</h2>
+    <p class="card-meta">{{ project.role }} · {{ project.years }}</p>
+  </div>
+  <div class="project-body">
+    <p class="lede">{{ project.summary }}</p>
+    {%- if project.details %}<p>{{ project.details }}</p>{% endif %}
+    {%- if project.highlights.length %}
+    <ul class="highlights">
+      {%- for item in project.highlights %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+    {%- endif %}
+    {%- if project.tags.length %}
+    <ul class="chip-list" aria-label="Areas">
+      {%- for tag in project.tags %}<li class="chip">{{ tag }}</li>{% endfor %}
+    </ul>
+    {%- endif %}
+    {%- if project.link %}<p><a class="card-link" href="{{ project.link }}">Visit {{ project.title }} →</a></p>{% endif %}
+  </div>
+</article>
+{%- endfor %}

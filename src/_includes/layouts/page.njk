@@ -1,0 +1,10 @@
+---
+layout: layouts/base.njk
+---
+<div class="container page">
+  <header class="page-header">
+    <h1>{{ title }}</h1>
+    {%- if intro %}<p class="lede">{{ intro }}</p>{% endif %}
+  </header>
+  {{ content | safe }}
+</div>

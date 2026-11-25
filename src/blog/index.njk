@@ -1,0 +1,25 @@
+---
+layout: layouts/page.njk
+title: Blog
+intro: Notes on building products, teaching, and putting AI to work, written as I learn.
+description: Writing by David DeWinter on product, building, and practical AI.
+permalink: /blog/
+---
+{%- if collections.posts.length %}
+<ul class="post-list">
+  {%- for post in collections.posts %}
+  <li>
+    <a href="{{ post.url }}">
+      <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+      <div>
+        <h3>{{ post.data.title }}{% if post.data.draft %} <span class="tag tag-draft">Draft</span>{% endif %}</h3>
+        {%- if post.data.description %}<p>{{ post.data.description }}</p>{% endif %}
+      </div>
+    </a>
+  </li>
+  {%- endfor %}
+</ul>
+<p class="form-note" style="margin-top:1.5rem">Follow along with the <a href="/feed.xml">RSS feed</a>.</p>
+{%- else %}
+<p class="empty-state">No posts yet. The first one is on its way.</p>
+{%- endif %}

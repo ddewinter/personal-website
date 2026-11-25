@@ -1,0 +1,12 @@
+node_modules/
+_site/
+.DS_Store
+
+# Source material kept on your computer only (not published with the site)
+David_DeWinter_Resume.pdf
+headshot-portrait.jpg
+.claude/settings.local.json
+
+# Local-only: design mockups and editor tooling
+design-directions/
+.claude/
